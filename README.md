@@ -4,8 +4,11 @@ Secure Rummy Web Game is a variation of one of the most popular card game - Rumm
 
 ARCHITECTURE
 Our project RummyGame is implemented using the web framework - built using Spring MVC framework which includes three different tiers for segregation of actions:
+
 ●	Model - To implement the code logic and database operations
+
 ●	View - To generate the view and display of the application
+
 ●	Controller - To create the connection channel between the model and view of the application and control the passage of data between the above two tiers.
 
 The Maven Framework has been used to resolve any dependencies required to implement the web application. Along with our code you will find attached, the projects Maven pom.xml detailing the dependencies required to stand up the application.
