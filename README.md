@@ -1,8 +1,10 @@
 # Secure Rummay Web Game
 INTRODUCTION
+
 Secure Rummy Web Game is a variation of one of the most popular card game - Rummy. The game can be played by two players, each receiving ten cards and player’s object of the game is to dispose of all the cards in his hand. In this implementation of the Rummy game, the winner is determined by the individual that reach max points of 100.
 
 ARCHITECTURE
+
 Our project RummyGame is implemented using the web framework - built using Spring MVC framework which includes three different tiers for segregation of actions:
 
 ●	Model - To implement the code logic and database operations
@@ -21,14 +23,19 @@ MySQL database is utilized as the backend in Database tier of our web applicatio
 
 Given below is the description of important code files of the application:
 View 
+
   ●	Welcome.jsp
     Landing page of the application 
+    
   ●	Register.jsp
     Web page to allow users to register into the application
+    
   ●	Login.jsp
     Web page to allow users to login into the application
+    
   ●	Home.jsp
     Web page for each individual user to start the new game and view the game dashboard about number of wins and losses 
+    
   ●	PlayerView.jsp
     Web page for each player to  view his audit data of the previous and current games
 Model
