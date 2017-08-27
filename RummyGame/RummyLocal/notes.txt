@@ -1,0 +1,64 @@
+TLS/SSL
+	 *- Redirection from http(8080) to https(8443).
+	 *- Ports reflected in Tomcat's server.xml and Spring MVC web security configuration RummySecurityConfig.java
+	 - Rejection of expired certificates?? Client or Server??
+
+Registration
+	- Done
+  
+Logging
+	- Implemented (not working)
+	
+Atomic database transactions - done (implemented and running)
+
+MySQL Database Configuration
+	- Create database - Database name "RummyDB"
+	- Create schema?? - Schema name "game"
+	- Create tables
+		- Users (done)
+			+ idUsers (UNIQUE,INCREMENT,INTEGER,NOT NULL)
+			- username (UNIQUE, STRING(20), NOT NULL)
+			- useremail (UNIQUE, STRING(100), NOT NULL)
+		- Password (done)
+			+ iduserpassword (UNIQUE,INTEGER,NOT NULL)
+			- userpassword (LONGTEXT, NOT NULL)
+			- locked (TINYINT(1), NOT NULL)
+		- Actions
+			+ id (UNIQUE, INCREMENT, INTEGER, NOT NULL)
+			- actionName (UNIQUE, (STRING(10){DRAW, MELD,LAY,DISCARD})
+		- GameMoves
+			+ id (STRING(20), NOT NULL)
+			- playerId (INTEGER, NOT NULL)
+			- actionId (INTEGER, NOT NULL)
+			- oldHand (STRING(30), NOT NULL)
+			- newHand (STRING(30), NOT NULL)
+			
+		- Statistics
+			+ id (UNIQUE, INCREMENT, INTEGER, NOT NULL)
+			- gameId (STRING(20), NOT NULL)
+			- playerId (INTEGER, NOT NULL)
+			
+Authentication (RMohod)
+	*- User creation - done
+	- User stored in database( Tables required Users, Password) - done
+	*- User passwords stored as salted hashes - done
+	- Restrict fail authentications (Lock account)
+	
+User Sessions (RMohod)
+	- Create user sessions - done
+	- Destroy sessions - done
+	- Session timeout (Actions taken if timeout?? Disconnect, Forfiet game) - done 
+
+Game 
+	*- Create card deck
+	*- Create dealer
+	- Player actions
+	- Generate logic to implement game
+	- Allow players to join open games
+	- Show game statistics if logged in (WIN/LOSSES)
+	- Show audit for a complete game
+	
+Scan Code (Detect defects, ...)
+Write Report - Discuss security implementation
+Deploy code and create video <= 5 minutes
+	

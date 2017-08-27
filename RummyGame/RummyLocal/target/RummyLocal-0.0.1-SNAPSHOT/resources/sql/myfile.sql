@@ -1,0 +1,44 @@
+DROP DATABASE rummy;
+CREATE DATABASE rummy;
+
+USE rummy;
+
+CREATE TABLE users (
+  user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE passwords (
+  pwd_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  password LONGTEXT	NOT NULL,
+  lock TINYINT NOT NULL,
+  user_id INT NOT NULL,
+  FOREIGN KEY fk_user(user_id)
+  REFERENCES users(user_id)
+  ON UPDATE CASCADE
+  ON DELETE RESTRICT
+);
+
+CREATE TABLE statistics (
+  stat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  wins INT NOT NULL,
+  losses INT NOT NULL,
+  user_id INT NOT NULL,
+  FOREIGN KEY fk_user(user_id)
+  REFERENCES users(user_id)
+  ON UPDATE CASCADE
+  ON DELETE RESTRICT
+);
+
+CREATE TABLE audit (
+  audit_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  game_id VARCHAR(100) NOT NULL,
+  move VARCHAR(20) NOT NULL,
+  card VARCHAR(50) NOT NULL,
+  user_id INT NOT NULL,
+  FOREIGN KEY fk_user(user_id)
+  REFERENCES users(user_id)
+  ON UPDATE CASCADE
+  ON DELETE RESTRICT
+);
