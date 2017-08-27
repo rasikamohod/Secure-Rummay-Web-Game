@@ -187,7 +187,6 @@ This method prevents access to user password directly through user table and thu
 The password encryption is performed in the system just before inserting the password in database. 
 This enables the system to reduce the vulnerable TOCTOU gap in the system to be negligible.
 
-
 ●	Session Management
 ○	Session Creation
 After a user successfully logs in the system, an unique user session is maintained to verify the user’s state throughout the application.
